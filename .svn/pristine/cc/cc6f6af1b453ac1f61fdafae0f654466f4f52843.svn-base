@@ -1,0 +1,1 @@
+<jsp:forward page="/system/login.do"></jsp:forward>

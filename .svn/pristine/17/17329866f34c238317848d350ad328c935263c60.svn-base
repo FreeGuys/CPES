@@ -1,0 +1,24 @@
+package com.atguigu.crowdfunding.cpes.bean;
+
+public class UserRoleCount {
+	private Integer Userid,upcount;
+
+	public Integer getUserid() {
+		return Userid;
+	}
+
+	public void setUserid(Integer userid) {
+		Userid = userid;
+	}
+
+	public Integer getUpcount() {
+		return upcount;
+	}
+
+	public void setUpcount(Integer upcount) {
+		this.upcount = upcount;
+	}
+
+	
+	
+}

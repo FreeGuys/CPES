@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.atguigu.crowdfunding.cpes.dao.PermissionDao">
+
+    <select id="queryAssignedPermission" resultType="rp">
+        select
+            *
+        from t_role_permission
+        where roleid = #{roleid}
+    </select>
+
+    <select id="queryPermissionById" resultType="permission">
+        select * from t_permission where id = #{id}
+    </select>
+
+    <select id="queryAll" resultType="permission">
+        select
+            *
+        from t_permission
+    </select>
+
+    <select id="queryChildPermission" resultType="permission">
+        select
+            *
+        from t_permission
+        where pid = #{pid}
+    </select>
+
+    <insert id="insertPermission">
+        insert into t_permission (
+            name,url,icon,pid,seqno
+        ) values (
+            #{name},#{url},#{icon},#{pid},#{seqno}
+        )
+    </insert>
+    
+    <update id="updatePermission">
+        update t_permission
+        set
+            name = #{name}, url = #{url}, icon = #{icon}, seqno = #{seqno}
+        where id = #{id}
+    </update>
+    
+    <delete id="deletePermission">
+        delete from t_permission where id = #{id}
+    </delete>
+</mapper>
